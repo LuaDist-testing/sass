@@ -1,0 +1,11 @@
+$width: 1000px;
+
+@mixin rounded($radius) {
+    border-radius: $radius + 5px;
+}
+
+p {
+    width: $width / 2 + 50px;
+    color: change-color(hsl(25, 100%, 80%), $lightness: 40%);
+    @include rounded(2px);
+}

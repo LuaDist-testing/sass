@@ -1,0 +1,42 @@
+-- This file was automatically generated for the LuaDist project.
+
+package = "sass"
+version = "0.1-1"
+
+description = {
+    summary = "Lua bindings for libsass",
+    homepage = "https://github.com/craigbarnes/lua-sass",
+    license = "ISC"
+}
+
+-- LuaDist source
+source = {
+  tag = "0.1-1",
+  url = "git://github.com/LuaDist-testing/sass.git"
+}
+-- Original source
+-- source = {
+--     url = "https://craigbarnes.gitlab.io/dist/lua-sass/lua-sass-0.1.tar.gz",
+--     md5 = "b609b2469615ac1f28b8b7e13aadeaaf"
+-- }
+
+dependencies = {
+    "lua >= 5.1"
+}
+
+external_dependencies = {
+    SASS = {
+        header = "sass/context.h",
+        library = "sass"
+    }
+}
+
+build = {
+    type = "builtin",
+    modules = {
+        sass = {
+            sources = {"sass.c"},
+            libraries = {"sass"}
+        }
+    }
+}
